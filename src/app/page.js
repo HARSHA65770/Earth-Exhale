@@ -1,65 +1,207 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import PlantCard from "@/components/PlantCard";
+import Footer from "@/components/Footer";
+
+// our plant data - in a real app this would come from a database or API
+const plants = [
+  {
+    id: 1,
+    name: "Snake Plant",
+    price: 499,
+    image: "/images/snake-plant.png",
+    category: "Air Purifying",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Peace Lily",
+    price: 649,
+    image: "/images/peace-lily.png",
+    category: "Indoor",
+    rating: 4,
+  },
+  {
+    id: 3,
+    name: "Pothos",
+    price: 299,
+    image: "/images/pothos.png",
+    category: "Hanging",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Rubber Plant",
+    price: 799,
+    image: "/images/rubber-plant.png",
+    category: "Indoor",
+    rating: 4,
+  },
+  {
+    id: 5,
+    name: "Succulent",
+    price: 199,
+    image: "/images/succulent.png",
+    category: "Low Maintenance",
+    rating: 4,
+  },
+  {
+    id: 6,
+    name: "Fiddle Leaf Fig",
+    price: 1299,
+    image: "/images/fiddle-leaf.png",
+    category: "Indoor",
+    rating: 5,
+  },
+  {
+    id: 7,
+    name: "Aloe Vera",
+    price: 349,
+    image: "/images/aloe-vera.png",
+    category: "Medicinal",
+    rating: 5,
+  },
+  {
+    id: 8,
+    name: "Monstera",
+    price: 999,
+    image: "/images/hero-plant.png",
+    category: "Trending",
+    rating: 5,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      {/* Navigation Bar */}
+      <Navbar />
+
+      {/* Hero Section */}
+      <Hero />
+
+      {/* About Section */}
+      <section
+        id="about"
+        className="py-20 bg-gradient-to-b from-primary to-primary-dark"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="text-accent-light text-sm font-medium tracking-widest uppercase mb-3">
+              Why Choose Us
+            </p>
+            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-bold text-text-light mb-6">
+              Your Trusted Plant Partner
+            </h2>
+            <p className="text-text-muted text-base md:text-lg leading-relaxed mb-12">
+              At Earth&apos;s Exhale, we believe every home deserves a touch of
+              green. We carefully select each plant to make sure it arrives
+              healthy and ready to grow with you.
+            </p>
+          </div>
+
+          {/* Feature cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-card-bg/60 backdrop-blur-sm rounded-2xl p-8 border border-primary-light/20 text-center hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5">
+                <span className="text-3xl">🌱</span>
+              </div>
+              <h3 className="font-[var(--font-heading)] text-xl font-semibold text-text-light mb-3">
+                Freshly Grown
+              </h3>
+              <p className="text-text-muted text-sm leading-relaxed">
+                All our plants are freshly grown in our nursery and shipped
+                directly to your doorstep within 2-3 business days.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-card-bg/60 backdrop-blur-sm rounded-2xl p-8 border border-primary-light/20 text-center hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5">
+                <span className="text-3xl">💧</span>
+              </div>
+              <h3 className="font-[var(--font-heading)] text-xl font-semibold text-text-light mb-3">
+                Care Guide Included
+              </h3>
+              <p className="text-text-muted text-sm leading-relaxed">
+                Every plant comes with a detailed care guide so you know exactly
+                how to water, feed, and keep it thriving in your home.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-card-bg/60 backdrop-blur-sm rounded-2xl p-8 border border-primary-light/20 text-center hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
+              <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5">
+                <span className="text-3xl">🛡️</span>
+              </div>
+              <h3 className="font-[var(--font-heading)] text-xl font-semibold text-text-light mb-3">
+                30-Day Guarantee
+              </h3>
+              <p className="text-text-muted text-sm leading-relaxed">
+                Not happy with your plant? We offer a 30-day replacement
+                guarantee on all our products. No questions asked.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Plants Section */}
+      <section id="plants" className="py-20 bg-primary-dark">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section header */}
+          <div className="text-center mb-14">
+            <p className="text-accent-light text-sm font-medium tracking-widest uppercase mb-3">
+              Our Collection
+            </p>
+            <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-bold text-text-light mb-4">
+              Our Top Selling Plants
+            </h2>
+            <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto">
+              Hand-picked by our experts, these are the plants our customers
+              love the most. Perfect for beginners and experienced plant parents
+              alike.
+            </p>
+          </div>
+
+          {/* Plant cards grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {plants.map((plant) => (
+              <PlantCard
+                key={plant.id}
+                name={plant.name}
+                price={plant.price}
+                image={plant.image}
+                category={plant.category}
+                rating={plant.rating}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA / Newsletter Section */}
+      <section className="py-20 bg-gradient-to-b from-primary-dark to-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-bold text-text-light mb-6">
+            Ready to Go Green?
+          </h2>
+          <p className="text-text-muted text-base md:text-lg max-w-2xl mx-auto mb-10">
+            Join thousands of plant lovers who have transformed their spaces
+            with Earth&apos;s Exhale. Start your green journey today.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#plants"
+            className="inline-block bg-accent hover:bg-accent-light text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-accent/30 hover:-translate-y-1"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Browse All Plants 🌿
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </main>
   );
 }
