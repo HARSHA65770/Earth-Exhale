@@ -6,7 +6,7 @@ A beautiful, responsive indoor plant shopping website built with **Next.js** and
 
 ## 🚀 Live Demo
 
-🔗 **Deployed URL**: [your-vercel-url-here]
+🔗 **Deployed URL**: [https://earth-exhale-93cjse978-aare-harinis-projects.vercel.app](https://earth-exhale-93cjse978-aare-harinis-projects.vercel.app)
 
 ## 📁 Project Structure
 
