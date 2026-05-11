@@ -2,8 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PlantCard from "@/components/PlantCard";
 import Footer from "@/components/Footer";
-
-// our plant data - in a real app this would come from a database or API
 const plants = [
   {
     id: 1,
@@ -74,13 +72,8 @@ const plants = [
 export default function Home() {
   return (
     <main>
-      {/* Navigation Bar */}
       <Navbar />
-
-      {/* Hero Section */}
       <Hero />
-
-      {/* About Section */}
       <section
         id="about"
         className="py-20 bg-gradient-to-b from-primary to-primary-dark"
@@ -99,10 +92,7 @@ export default function Home() {
               healthy and ready to grow with you.
             </p>
           </div>
-
-          {/* Feature cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Feature 1 */}
             <div className="bg-card-bg/60 backdrop-blur-sm rounded-2xl p-8 border border-primary-light/20 text-center hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
               <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5">
                 <span className="text-3xl">🌱</span>
@@ -115,8 +105,6 @@ export default function Home() {
                 directly to your doorstep within 2-3 business days.
               </p>
             </div>
-
-            {/* Feature 2 */}
             <div className="bg-card-bg/60 backdrop-blur-sm rounded-2xl p-8 border border-primary-light/20 text-center hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
               <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5">
                 <span className="text-3xl">💧</span>
@@ -129,8 +117,6 @@ export default function Home() {
                 how to water, feed, and keep it thriving in your home.
               </p>
             </div>
-
-            {/* Feature 3 */}
             <div className="bg-card-bg/60 backdrop-blur-sm rounded-2xl p-8 border border-primary-light/20 text-center hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
               <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5">
                 <span className="text-3xl">🛡️</span>
@@ -146,11 +132,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Plants Section */}
       <section id="plants" className="py-20 bg-primary-dark">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section header */}
           <div className="text-center mb-14">
             <p className="text-accent-light text-sm font-medium tracking-widest uppercase mb-3">
               Our Collection
@@ -164,8 +147,6 @@ export default function Home() {
               alike.
             </p>
           </div>
-
-          {/* Plant cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {plants.map((plant) => (
               <PlantCard
@@ -180,8 +161,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* CTA / Newsletter Section */}
       <section className="py-20 bg-gradient-to-b from-primary-dark to-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-[var(--font-heading)] text-3xl sm:text-4xl md:text-5xl font-bold text-text-light mb-6">
@@ -199,8 +178,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
       <Footer />
     </main>
   );

@@ -4,10 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
-  // state for mobile menu toggle
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // toggle hamburger menu on mobile
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -16,16 +13,12 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary-dark/90 backdrop-blur-md border-b border-primary-light/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo / Brand Name */}
           <Link href="/" className="flex items-center gap-2 group">
-            {/* little leaf emoji as logo */}
             <span className="text-2xl md:text-3xl">🌿</span>
             <span className="text-xl md:text-2xl font-[var(--font-heading)] font-bold text-text-light tracking-wide group-hover:text-accent-light transition-colors duration-300">
               Earth&apos;s Exhale
             </span>
           </Link>
-
-          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
@@ -52,8 +45,6 @@ export default function Navbar() {
               Contact
             </Link>
           </div>
-
-          {/* CTA Button (desktop) */}
           <div className="hidden md:block">
             <Link
               href="#plants"
@@ -62,8 +53,6 @@ export default function Navbar() {
               Shop Now
             </Link>
           </div>
-
-          {/* Hamburger Button (mobile) */}
           <button
             onClick={toggleMenu}
             className="md:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
@@ -86,8 +75,6 @@ export default function Navbar() {
             />
           </button>
         </div>
-
-        {/* Mobile Menu Dropdown */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
             isMenuOpen ? "max-h-80 pb-6" : "max-h-0"

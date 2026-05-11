@@ -3,14 +3,12 @@
 import Link from "next/link";
 
 export default function Footer() {
-  // get current year dynamically
   const currentYear = new Date().getFullYear();
 
   return (
     <footer id="contact" className="bg-primary-dark border-t border-primary-light/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <span className="text-2xl">🌿</span>
@@ -23,7 +21,6 @@ export default function Footer() {
               hand-picked plants are grown with love and care to help you create
               a greener, healthier living space.
             </p>
-            {/* Social links */}
             <div className="flex gap-4">
               <a
                 href="https://instagram.com"
@@ -54,8 +51,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Quick Links */}
           <div>
             <h4 className="font-[var(--font-heading)] text-lg font-semibold text-text-light mb-4">
               Quick Links
@@ -73,8 +68,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Plant Categories */}
           <div>
             <h4 className="font-[var(--font-heading)] text-lg font-semibold text-text-light mb-4">
               Categories
@@ -98,8 +91,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Newsletter */}
           <div>
             <h4 className="font-[var(--font-heading)] text-lg font-semibold text-text-light mb-4">
               Stay Updated
@@ -125,8 +116,6 @@ export default function Footer() {
             </form>
           </div>
         </div>
-
-        {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-primary-light/20 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-text-muted text-sm">
             © {currentYear} Earth&apos;s Exhale. All rights reserved.
