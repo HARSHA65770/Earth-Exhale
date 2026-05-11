@@ -147,9 +147,9 @@ Go to [http://localhost:3000](http://localhost:3000) to see the website.
 
 ## 📬 Contact
 
-- **Name**: [Your Name]
-- **Email**: [your.email@example.com]
-- **GitHub**: [github.com/your-username](https://github.com/your-username)
+- **Name**: Aare Harini
+- **Email**: aareharini9@gmail.com
+
 
 ---
 
